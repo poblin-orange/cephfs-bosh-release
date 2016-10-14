@@ -43,12 +43,12 @@ case $1 in
             echo "unmounted"
     fi
 
-    mkdir -p $MOUNT_DIR
-    chown vcap:vcap $MOUNT_DIR
-    ceph-fuse -m <%= p("cephbroker.mds") %> -c /var/vcap/jobs/cephbroker/keys/ceph.client.admin.keyring -r / $MOUNT_DIR
-    chown -R vcap:vcap $MOUNT_DIR
-    umount $MOUNT_DIR
-    rm -rf $MOUNT_DIR
+#    mkdir -p $MOUNT_DIR
+#    chown vcap:vcap $MOUNT_DIR
+#    ceph-fuse -m <%= p("cephbroker.mds") %> -c /var/vcap/jobs/cephbroker/keys/ceph.client.admin.keyring -r / $MOUNT_DIR
+#    chown -R vcap:vcap $MOUNT_DIR
+#    umount $MOUNT_DIR
+#    rm -rf $MOUNT_DIR
 
     echo "{}" > $CONFIG_DIR/ServiceBindings.json
     echo "{}" > $CONFIG_DIR/ServiceInstances.json
